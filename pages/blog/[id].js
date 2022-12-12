@@ -35,7 +35,7 @@ export default function Post({postData}) {
 
 export async function getStaticPaths() {
     // Call an external API endpoint to get posts
-    const res = await fetch(`http://127.0.0.1:1337/api/articles`);
+    const res = await fetch(`https://fullstack-cms.herokuapp.com/api/articles`);
     const posts = await res.json();
 
     // Get the paths we want to pre-render based on posts
@@ -46,7 +46,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({params}) {
     // Call an external API endpoint to get posts
-    const res = await fetch(`http://127.0.0.1:1337/api/articles?filters[slug][$eq]=${params.id}`);
+    const res = await fetch(`https://fullstack-cms.herokuapp.com/api/articles?filters[slug][$eq]=${params.id}`);
     const data = await res.json();
 
     const postData ={
