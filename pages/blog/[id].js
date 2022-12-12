@@ -10,15 +10,18 @@ import Ol from "../../components/ol";
 import Highlight from "../../components/highlight";
 import Link from "../../components/link";
 import { useEffect, useState } from "react";
+import { useRouter } from 'next/router';
 
 function Post() {
     const [postData, setPostData] = useState();
     const [isLoading, setLoading] = useState(false);
+    const router = useRouter();
+    const { id } = router.query;
 
     useEffect(() => {
         async function load() {
             setLoading(true);
-            const res = await fetch(`https://fullstack-cms.herokuapp.com/api/articles?filters[slug][$eq]=${params.id}`);
+            const res = await fetch(`https://fullstack-cms.herokuapp.com/api/articles?filters[slug][$eq]=${id}`);
             const data = await res.json();
 
             const postData ={
