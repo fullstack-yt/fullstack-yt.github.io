@@ -1,0 +1,15 @@
+
+// title class for h1 element
+.title {
+  font-size: 2rem;
+  color: #e5c07b;
+  line-height: 2.2rem;
+  text-align: center;
+  margin-bottom: 120px;
+  font-weight: 800;
+  @media (max-width: 800px) {
+    font-size: 1.5rem;
+      line-height: 1.4rem;
+    margin-bottom: 60px;
+  }
+}

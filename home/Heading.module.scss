@@ -1,0 +1,18 @@
+@import 'styles/variables';
+
+.heading {
+  font-size: 44px;
+  font-weight: 600;
+  color: $white;
+  line-height: 94px;
+  @media (max-width: 800px) {
+    line-height: 54px;
+  }
+}
+
+.offset {
+  margin-top: 400px;
+  @media (max-width: 800px) {
+    margin-top: 130px;
+  }
+}

@@ -1,0 +1,23 @@
+.nav {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 40px;
+  max-width: 1100px;
+  width: 100%;
+  margin: auto auto 144px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media (max-width: 600px) {
+    padding-top: 24px;
+    margin-bottom: 42px;
+  }
+}
+
+.main {
+  padding-left: 16px;
+  padding-right: 16px;
+  max-width: 1100px;
+  width: 100%;
+  margin: auto;
+}

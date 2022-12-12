@@ -1,0 +1,8 @@
+@import 'styles/variables';
+
+.highlight {
+  color: $blue;
+  code {
+    color: $purple;
+  }
+}

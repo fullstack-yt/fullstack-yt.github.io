@@ -1,0 +1,11 @@
+@import 'styles/variables';
+
+.inlineCode {
+  background-color: rgb(50, 50, 50);
+  font-family: "Fira Code", monospace;
+  padding: 0.2em 0.4em;
+  line-height: 1;
+  margin: 0;
+  font-size: 85%;
+  color: $gray;
+}

@@ -1,0 +1,12 @@
+.subheading {
+  padding-top: 40px;
+  padding-bottom: 20px;
+  font-size: 40px;
+  font-weight: 600;
+  display: inline-block;
+  @media (max-width: 800px) {
+    padding-top: 28px;
+    padding-bottom: 20px;
+    font-size: 32px;
+  }
+}

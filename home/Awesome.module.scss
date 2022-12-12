@@ -1,0 +1,42 @@
+@import 'styles/variables';
+
+.awesome {
+  font-family: 'Rubik', sans-serif;
+  font-size: 200px;
+  font-weight: 900;
+  color: $red;
+  line-height: 200px;
+  padding-bottom: 64px;
+  -webkit-text-stroke: 12px rgb(40, 40, 40);
+  text-stroke: 12px rgb(40, 40, 40);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
+  @media (max-width: 1200px) {
+    font-weight: bold;
+    -webkit-text-stroke: 6px rgb(40, 40, 40);
+    text-stroke: 6px rgb(40, 40, 40);
+    font-size: 100px;
+    line-height: 120px;
+  }
+  @media (max-width: 800px) {
+    margin-top: 130px;
+    position: relative;
+    justify-content: flex-start;
+    top: auto;
+    left: auto;
+    right: auto;
+    padding: 0;
+    height: auto;
+    -webkit-text-stroke: 3px rgb(40, 40, 40);
+    text-stroke: 3px rgb(40, 40, 40);
+    font-size: 60px;
+    line-height: 70px;
+  }
+}
