@@ -9,8 +9,32 @@ import Pre from "../../components/pre";
 import Ol from "../../components/ol";
 import Highlight from "../../components/highlight";
 import Link from "../../components/link";
+import { useEffect, useState } from "react";
 
-export default function Post({postData}) {
+function Post() {
+    const [postData, setPostData] = useState();
+    const [isLoading, setLoading] = useState(false);
+
+    useEffect(() => {
+        async function load() {
+            setLoading(true);
+            const res = await fetch(`https://fullstack-cms.herokuapp.com/api/articles?filters[slug][$eq]=${params.id}`);
+            const data = await res.json();
+
+            const postData ={
+                id: params.id,
+                ...data.data[0].attributes,
+            };
+
+            setPostData(postData);
+            setLoading(false);
+        }
+        load();
+    }, []);
+
+    if (isLoading) return <div>Loading...</div>
+    if (!postData) return <div>Not found</div>
+
     return (
         <Layout>
             <main className={styles.main}>
@@ -32,15 +56,4 @@ export default function Post({postData}) {
     );
 }
 
-export async function getServerSideProps({params}) {
-    // Call an external API endpoint to get posts
-    const res = await fetch(`https://fullstack-cms.herokuapp.com/api/articles?filters[slug][$eq]=${params.id}`);
-    const data = await res.json();
-
-    const postData ={
-        id: params.id,
-        ...data.data[0].attributes,
-    };
-
-    return {props: {postData}};
-}
+export default Post;
