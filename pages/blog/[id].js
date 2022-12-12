@@ -1,4 +1,3 @@
-import {useEffect} from "react";
 import Title from "../../components/title";
 import styles from './Post.module.scss';
 import Layout from "../../home/layout";
@@ -44,7 +43,7 @@ export async function getStaticPaths() {
     return {paths: paths || [], fallback: false};
 }
 
-export async function getStaticProps({params}) {
+export async function getServerSideProps({params}) {
     // Call an external API endpoint to get posts
     const res = await fetch(`https://fullstack-cms.herokuapp.com/api/articles?filters[slug][$eq]=${params.id}`);
     const data = await res.json();
