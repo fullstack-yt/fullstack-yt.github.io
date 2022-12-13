@@ -19,13 +19,14 @@ function Post() {
     const { id } = router.query;
 
     useEffect(() => {
+        if (!id) return;
         async function load() {
             setLoading(true);
             const res = await fetch(`https://fullstack-cms.herokuapp.com/api/articles?filters[slug][$eq]=${id}`);
             const data = await res.json();
 
             const postData ={
-                id: params.id,
+                id,
                 ...data.data[0].attributes,
             };
 
@@ -33,7 +34,7 @@ function Post() {
             setLoading(false);
         }
         load();
-    }, []);
+    }, [id]);
 
     if (isLoading) return <div>Loading...</div>
     if (!postData) return <div>Not found</div>
